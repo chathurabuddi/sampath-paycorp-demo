@@ -2,7 +2,7 @@
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/chathurabuddi/sampath-paycorp-demo/blob/master/LICENSE)
 [![Build](https://github.com/chathurabuddi/sampath-paycorp-demo/actions/workflows/build.yml/badge.svg)](https://github.com/chathurabuddi/sampath-paycorp-demo/actions/workflows/build.yml)
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=chathurabuddi_sampath-paycorp-demo)](https://sonarcloud.io/dashboard?id=chathurabuddi_sampath-paycorp-demo)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=chathurabuddi_sampath-paycorp-demo&metric=alert_status)](https://sonarcloud.io/dashboard?id=chathurabuddi_sampath-paycorp-demo)
 
 This application demonstrate how to configure Sampath Bank Paycorp Payment Gateway
 with Spring-Boot and Thymeleaf. Please read [Paycorp technical documentation](https://paycorp-international.gitbook.io/quick-web/) and understand the workflow well 
