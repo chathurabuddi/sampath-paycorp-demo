@@ -1,6 +1,8 @@
 package lk.chathurabuddi.sampath.paycorp.demo.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -9,21 +11,23 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestController
+@Controller
 @RequestMapping("payment")
 @Slf4j
 public class PaymentController {
 
     @GetMapping
-    public String processHostedCheckout(@RequestParam("reqid") String reqId) throws IOException {
+    public String processHostedCheckout(@RequestParam("reqid") String reqId, Model model) throws IOException {
         log.info("payment process request received. [ method:GET ] [ type:HostedCheckout ] [ reqId:{} ]", reqId);
-        return processPayment(reqId).toString();
+        model.addAttribute("txnReference", processPayment(reqId).get("txnReference"));
+        return "payment-success";
     }
 
     @PostMapping
-    public String processIframeCheckout(@RequestParam("reqid") String reqId) {
+    public String processIframeCheckout(@RequestParam("reqid") String reqId, Model model) {
         log.info("payment process request received. [ method:POST ] [ type:IframeCheckout ] [ reqId:{} ]", reqId);
-        return processPayment(reqId).toString();
+        model.addAttribute("txnReference", processPayment(reqId).get("txnReference"));
+        return "payment-success";
     }
 
     private Map<String, String> processPayment(String reqId) {

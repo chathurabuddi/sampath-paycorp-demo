@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Success</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h2>Payment Success!</h2>
+    <p>Transaction Reference: <span th:text="${txnReference}"></span></p>
+    <div class="btn">
+        <input type="submit" value="Back to Payment Page" onclick="window.location='/'"/>
+    </div>
+</div>
+</body>
+</html>

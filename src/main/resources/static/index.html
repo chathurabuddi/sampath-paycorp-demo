@@ -6,79 +6,26 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sampath Paycorp Demo</title>
-
-    <script type="text/javascript" src="https://sampath.paycorp.lk/webinterface/qw/paycorp_payments.js"></script>
-
-    <script>
-        // hosted checkout
-        function buildPayment() {
-            return {
-                clientId: 14002582,
-                paymentAmount: 1000,
-                currency: 'LKR',
-                returnUrl: 'http://localhost:8080/payment',
-                clientRef: 'CREF-12345',
-                comment: 'This is a demo payment'
-            };
-        }
-    </script>
-
-    <script>
-        // iframe checkout
-        document.addEventListener("DOMContentLoaded", (event) => {
-            loadPaycorpPayment(buildPayment(), 'paycorp-payment');
-        });
-        function buildIframePayment() {
-            return {
-                clientId: 14002582,
-                paymentAmount: 1000,
-                currency: 'LKR',
-                returnUrl: 'http://localhost:8080/payment',
-                clientRef: 'CREF-12345',
-                comment: 'This is a demo payment'
-            };
-        }
-    </script>
-    <style>
-        #hosted{
-            float: left;
-            width: 45%;
-        }
-        input[type=submit]{
-            width: 30%;
-            height: 40px;
-        }
-        iframe{
-            width:500px;
-            height:500px;
-        }
-        .i-frame{
-            float: left;
-            width: 50%;
-        }
-        .paycorp-payment{
-            border: 1px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Sampath Paycorp Demo</h1>
-    </div>
+    <h1>Sampath Paycorp Demo</h1>
     <div class="container">
         <!--For Hosted Checkouts-->
         <div id="hosted">
-            <div><h2>Hosted Check Out</h2></div>
-            <div id="hosted-btn">
-                <input type="submit" value="Hosted Check Out" onclick="loadPaycorpPayment(buildPayment())">
+            <h2 class="hosted-title">Hosted Check Out</h2>
+            <div class="btn">
+                <input type="submit" value="Proceed to Checkout" onclick="loadPaycorpPayment(buildPayment())">
             </div>
         </div>
 
         <!--For Iframe Checkouts-->
         <div class="i-frame">
-            <div><h2>Iframe Check Out</h2></div>
-            <div id="paycorp-payment" class="paycorp-payment" ></div>
+            <h2 class="i-frame-title">Iframe Check Out</h2>
+            <div id="paycorp-payment" class="paycorp-payment"></div>
         </div>
     </div>
+    <script type="text/javascript" src="https://sampath.paycorp.lk/webinterface/qw/paycorp_payments.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

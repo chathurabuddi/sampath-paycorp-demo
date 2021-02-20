@@ -1,0 +1,51 @@
+body {
+    background-color: #ebf1f5;
+    margin: 0;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+h1 {
+    margin: auto auto 50px auto;
+    width: 100%;
+    padding: 20px;
+    background-color: #ff7d57;
+    color: #ffffff;
+}
+
+.container {
+    margin: auto;
+    width: 500px;
+}
+
+.btn {
+    position: relative;
+    height: 100px;
+}
+
+.btn input[type=submit] {
+    margin: 0;
+    position: absolute;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background: #f5801b linear-gradient(180deg, #f96a51, #f5801b) repeat-x;
+    font-size: 16px;
+    color: #ffffff;
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.i-frame .paycorp-payment,
+.i-frame .paycorp-payment iframe {
+    width: 500px;
+    height: 500px;
+}
+
+.i-frame-title {
+    margin-bottom: 0;
+}
